@@ -4,6 +4,12 @@ from sqlalchemy import create_engine
 import sqlite3
 
 def load_data(messages_filepath, categories_filepath):
+
+    '''
+    This function loads the data from csv files
+    and creates df for each file, then merges dfs together
+    returnng the merged dfs
+    '''
     
     # load messages dataset
     messages = pd.read_csv(messages_filepath)
@@ -17,6 +23,11 @@ def load_data(messages_filepath, categories_filepath):
 
 def clean_data(df):
     
+    '''
+    This funtion takes a df, cleans the categories column and uses its unique values as new columns
+    then cleans all values to just hhave either (0) or (1) and removes (2) values
+    '''
+
     df = df
     # create a dataframe of the 36 individual category columns
     categories = df.categories.str.split(expand=True, pat=';')
@@ -51,12 +62,24 @@ def clean_data(df):
 
 def save_data(df, database_filename):
     
+    '''
+    This function takes a dataframe and stores it in a sqlite database
+    '''
+
     #save as sql db
     engine = create_engine(f"sqlite:///{database_filename}")
     df.to_sql('DisasterResponse', engine, index=False, if_exists='replace')
 
 
 def main():
+
+    '''
+    This function runs the whole ETL pipeline:
+    - loads data from CSVs
+    - cleans teh data
+    - and saves the data in a sqlite database
+    '''
+
     if len(sys.argv) == 4:
 
         messages_filepath, categories_filepath, database_filepath = sys.argv[1:]
