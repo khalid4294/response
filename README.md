@@ -1,5 +1,9 @@
 # Disaster Response Pipeline Project
 
+This project trains a classifier on a dataset of more than 26K messages thatwere sent during a disaster.
+There's a webapp that has a text field where you can add a message and get the most probable type of message. there are 36 labels, your text can have multiple labels at the same time. 
+
+
 ### Instructions:
 1. Run the following commands in the project's root directory to set up your database and model.
 
