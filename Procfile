@@ -1,1 +1,1 @@
-web gunicorn response-khalid:app
+web: gunicorn response-khalid:app
