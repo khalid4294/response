@@ -27,8 +27,3 @@ typing-extensions==3.10.0.0
 urllib3==1.26.4
 Werkzeug==0.16.1
 zipp==3.4.1
-scikit-image==0.17.2
-scikit-learn @ file:///opt/concourse/worker/volumes/live/111833a2-339b-4578-413b-7337bb8fe64a/volume/scikit-learn_1598376920601/work
-SQLAlchemy @ file:///opt/concourse/worker/volumes/live/0214475e-3c0a-49a9-6cb8-ab2d5c945bef/volume/sqlalchemy_1603812264100/work
-nltk @ file:///tmp/build/80754af9/nltk_1592496090529/work
-cloudpickle @ file:///tmp/build/80754af9/cloudpickle_1598884132938/work
